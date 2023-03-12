@@ -5,6 +5,11 @@ import { TweenMax, Power2 } from 'gsap';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 
+import ColumnItem from './components/column-item/column-item';
+import TitleItem from './components/title-item/title-item';
+import MiddleColumnItem from './components/middle-column-item/middle-column-item';
+import ObservableComponent from './components/observable-component/observable-component';
+
 function App() {
 
   useEffect(() => {
@@ -80,10 +85,6 @@ function App() {
 
       star.material.color = new THREE.Color(newColor[0], newColor[1], newColor[2])
 
-
-
-
-
       scene.add(star);
       stars.push(star);
     }
@@ -91,7 +92,7 @@ function App() {
     const maxDist = 2;
     let time = 0;
 
-
+    let colorVars = document.documentElement;
     const animate = () => {
       requestAnimationFrame(animate);
 
@@ -107,7 +108,7 @@ function App() {
       orb.scale.set(size, size, size);
       orb.material.color.copy(orbColor);
 
-      let colorVars = document.documentElement;
+      
 
       colorVars.style.setProperty('--cursorColor', `rgb(${orbColor.r * 200},${orbColor.g * 200},${orbColor.b * 200})`);
 
@@ -218,7 +219,7 @@ function App() {
     const easeInOut = Power2.easeInOut;
     const updateBackground = () => {
       scene.background = backgroundColor;
-    };
+     };
     const tweenFinished = () => {
       isTweening = false;
     }
@@ -243,64 +244,25 @@ function App() {
     <div>
       <canvas id="background" />
       <main>
-        <section className="info1">
-          <h1 className="itemTitle">Hey there</h1>
-          <div className="itemContent">
-            <p> Welcome to my personal website, I hope you stay a while.
-              <br /><br />
-            </p>
-            <div className="wrapper">
-              <div className="static-text"> Allow me to introduce myself, my name is Chase, and among a few other things, I
-                like
-                to call myself </div>
-              <ul className="dynamic-list">
-                <li><span id="Interactive Developer">an Interactive Developer. </span></li>
-                <li><span id="User Experience Architect">a User Experience Architect. </span></li>
-                <li><span id="Thrill-Seeker">a Thrill-Seeker. </span></li>
-                <li><span id="Immersion Curator">an Immersion Curator. </span></li>
-                <li><span id="User Interface Designer">a User-Interface Designer. </span></li>
-                <li><span id="JavaScript Wizard">a JavaScript Wizard. </span></li>
-                <li><span id="Climber of Rocks">a Climber of Rocks. </span></li>
-                <li><span id="Problem-Solver">a Problem-Solver. </span></li>
-                <li><span id="SurelyNotChase"> <a href="https://observablehq.com/@surelynotchase?tab=profile">@SurelyNotChase. </a> </span></li>
-                <li><span id="Zelda Main">a Zelda Main. </span></li>
-                <li><span id="Martial Artist">a Martial Artist. </span></li>
-                <li><span id="Vibeologist"> a Vibeologist. </span></li>
-                <li><span id="Flower Tea Enthusiast">a Flower Tea Enthusiast. </span></li>
-                <li><span id="Undercover Philosopher">an Undercover Philosopher. </span></li>
-                <li><span id="when-nobody">when nobody else answers the phone.</span></li>
-                <li><span id="Bo Staff Expert">a Bo Staff Expert.</span></li>
-                <li><span id="Rick Roll"> <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">An Easter Egg Master.</a>
-                </span></li>
-              </ul>
-            </div>
-          </div>
-        </section>
-        <section className="info2">
-          <div className="itemContent">
-            <p>
-            </p>
-            <p>
-              Aside from the programming and design that I continue to build on at every opportunity, my time at university
-              has really afforded me confidence in my ability to learn adaptively, solve problems efficiently, and
-              communicate effectively.
-            </p>
-            <p>
-              Leadership and teamwork, and community building have been an essential and critical area of growth during my
-              time at RIT,
-            </p>
-            <div className="frame">
-              <img src="/client/Images/climbingPortrait%20(1).png" />
-            </div>
-            <p>
-              <br />
-              Family and friends are very important to me, and I try to make more everwhere I go. I like to believe that the
-              best way to get to know people is when working on meaningful challenges together, and I try to keep this in
-              mind during all parts of my life.
-            </p>
-          </div>
-        </section>
 
+        <TitleItem></TitleItem>
+        
+        {/* <ColumnItem title='Projects' column="left-column-item" content={[]}></ColumnItem> */}
+        {/* <MiddleColumnItem title='Resume' column="middle-column-item"></MiddleColumnItem> */}
+        <ColumnItem title='Contact' column="large-right-column-item"></ColumnItem>
+
+
+        {/* <ColumnItem title='Projects' column="left-column-item"></ColumnItem> */}
+        {/* <MiddleColumnItem title='Resume' column="middle-column-item"></MiddleColumnItem> */}
+        <ColumnItem title='Contact' column="large-right-column-item"></ColumnItem>
+
+        <ColumnItem title='Projects' column="large-left-column-item"></ColumnItem>
+        {/* <MiddleColumnItem title='Resume' column="middle-column-item"></MiddleColumnItem>
+        <ColumnItem title='Contact' column="right-column-item"></ColumnItem> */}
+
+        <ColumnItem title='Projects' column="left-column-item"></ColumnItem>
+        <MiddleColumnItem title='Resume' column="middle-column-item"></MiddleColumnItem>
+        <ColumnItem title='Contact' column="right-column-item"></ColumnItem>
       </main>
     </div>
   );

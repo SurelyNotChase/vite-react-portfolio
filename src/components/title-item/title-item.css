@@ -1,0 +1,64 @@
+
+.title-item {
+    margin-top: 20vh;
+    grid-column: 2/span 3;
+    color: white;
+}
+
+.wrapper .static-text {
+    width: 500px;
+    color: white;
+
+}
+
+.wrapper .dynamic-list {
+
+
+    line-height: 30px;
+    height: 30px;
+    overflow: hidden;
+}
+
+.dynamic-list li {
+    list-style: none;
+    font-weight: 600;
+    position: relative;
+    top: 0;
+    animation: slide 85s steps(17) infinite;
+}
+
+@keyframes slide {
+    100% {
+        top: -510px;
+    }
+}
+
+.dynamic-list span {
+    position: relative;
+    /* background-color: white; */
+    color: var(--cursorColor);
+}
+
+.dynamic-list span a{
+
+    color: var(--cursorColor);
+}
+
+.dynamic-list li span::after {
+    content: "";
+    position: absolute;
+    z-index: 99;
+    left: 0;
+    height: 30px;
+    width: 100%;
+    border-left: 4px solid var(--cursorColor);
+    background-color: black;
+    animation: typing 5s steps(30) infinite;
+}
+
+@keyframes typing {
+    100% {
+        left: 100%;
+        margin: 0 -35px 0 35px;
+    }
+}

@@ -9,10 +9,13 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "@observablehq/runtime": "5",
+    "@surelynotchase/flow-field-p5-js": "https://api.observablehq.com/@surelynotchase/flow-field-p5-js@306.tgz?v=3",
+    "bootstrap": "^5.2.3",
     "gsap": "^3.11.4",
     "noisejs": "^2.1.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "three": "^0.149.0"
   },
   "devDependencies": {
