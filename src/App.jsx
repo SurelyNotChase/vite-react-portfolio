@@ -9,6 +9,7 @@ import ColumnItem from './components/column-item/column-item';
 import TitleItem from './components/title-item/title-item';
 import MiddleColumnItem from './components/middle-column-item/middle-column-item';
 import ObservableComponent from './components/observable-component/observable-component';
+import SpaceComponent from './components/space-component/space-component';
 
 function App() {
 
@@ -108,7 +109,7 @@ function App() {
       orb.scale.set(size, size, size);
       orb.material.color.copy(orbColor);
 
-      
+
 
       colorVars.style.setProperty('--cursorColor', `rgb(${orbColor.r * 200},${orbColor.g * 200},${orbColor.b * 200})`);
 
@@ -219,7 +220,7 @@ function App() {
     const easeInOut = Power2.easeInOut;
     const updateBackground = () => {
       scene.background = backgroundColor;
-     };
+    };
     const tweenFinished = () => {
       isTweening = false;
     }
@@ -246,23 +247,23 @@ function App() {
       <main>
 
         <TitleItem></TitleItem>
-        
-        {/* <ColumnItem title='Projects' column="left-column-item" content={[]}></ColumnItem> */}
-        {/* <MiddleColumnItem title='Resume' column="middle-column-item"></MiddleColumnItem> */}
-        <ColumnItem title='Contact' column="large-right-column-item"></ColumnItem>
+        <SpaceComponent column="right-column-item"> </SpaceComponent>
+
+        <ColumnItem
+          title='Flow Field'
+          column="right-column-item"
+          url="https://observablehq.com/@surelynotchase/flow-field-p5-js"
+          content={
+            <ObservableComponent
+              source="https://observablehq.com/embed/@surelynotchase/flow-field-p5-js?cells=flowField">
+
+            </ObservableComponent>
+          }>
 
 
-        {/* <ColumnItem title='Projects' column="left-column-item"></ColumnItem> */}
-        {/* <MiddleColumnItem title='Resume' column="middle-column-item"></MiddleColumnItem> */}
-        <ColumnItem title='Contact' column="large-right-column-item"></ColumnItem>
 
-        <ColumnItem title='Projects' column="large-left-column-item"></ColumnItem>
-        {/* <MiddleColumnItem title='Resume' column="middle-column-item"></MiddleColumnItem>
-        <ColumnItem title='Contact' column="right-column-item"></ColumnItem> */}
+        </ColumnItem>
 
-        <ColumnItem title='Projects' column="left-column-item"></ColumnItem>
-        <MiddleColumnItem title='Resume' column="middle-column-item"></MiddleColumnItem>
-        <ColumnItem title='Contact' column="right-column-item"></ColumnItem>
       </main>
     </div>
   );

@@ -31,6 +31,23 @@ main {
     background-color: transparent;
 }
 
+a{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+a:hover,a:active{
+    color: var(--cursorColor)
+}
+
+a:visited{
+    text-emphasis: none;
+    text-decoration: none;
+    /* color: black; */
+
+}
+
 section {
     width: 100%;
     padding: 1rem;
@@ -54,13 +71,22 @@ section {
 
 }
 
+.column-items-spacer{
+
+    background-color: transparent;
+    padding:2rem;
+    margin-top:30vh;
+    margin-bottom: 30vh;
+  
+  }
+
 .column-item:hover{
   cursor: pointer;
   transition: 0.3s;
   background-color: white;
   color:black;
   border-radius: 25px;
-  box-shadow: 0px 0px 15px 5px var(--cursorColor);
+  box-shadow: 0px 0px 5px 2px var(--cursorColor);
   padding:2rem;
 
 

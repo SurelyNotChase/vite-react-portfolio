@@ -7,7 +7,7 @@ const MiddleColumnItem = (props) => (
       <div >
      
         <h2>{props.title}</h2>
-        <img src='../../assets/images/Chase_Lear_Resume.png'/>
+        <img src='../assets/images/Chase_Lear_Resume.png'/>
         
       </div>
     </div>
