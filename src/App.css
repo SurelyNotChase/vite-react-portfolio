@@ -99,8 +99,9 @@ section {
   
 }
 
-.middle-column-item {
-  grid-column: 6/span 2;
+.middle-column-item{
+  grid-column: 2/span 12;
+  width: 100%;
 }
 
 .right-column-item {

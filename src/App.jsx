@@ -248,21 +248,40 @@ function App() {
 
         <TitleItem></TitleItem>
         <SpaceComponent column="right-column-item"> </SpaceComponent>
-
         <ColumnItem
           title='Flow Field'
           column="right-column-item"
           url="https://observablehq.com/@surelynotchase/flow-field-p5-js"
           content={
-            <ObservableComponent
+            <ObservableComponent 
               source="https://observablehq.com/embed/@surelynotchase/flow-field-p5-js?cells=flowField">
 
             </ObservableComponent>
           }>
 
-
-
         </ColumnItem>
+
+        <ColumnItem
+          title='Big Item'
+          column="middle-column-item"
+          
+          content={
+            <div >
+
+              <h2 contenteditable="true">YO</h2>
+              <img src='https://www.surelynotchase.dev/client/Images/Chase_Lear_Resume_2023.png' />
+
+            </div>
+
+          }
+        ></ColumnItem>
+
+        <ColumnItem
+          title='Flow Field'
+          column="right-column-item">
+        </ColumnItem>
+
+
 
       </main>
     </div>

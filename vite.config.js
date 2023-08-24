@@ -10,4 +10,7 @@ export default defineConfig({
       // ... other dependencies ...
     ]
   },
+  rollupOptions: {
+    input: 'src/main.jsx', // Replace with the actual path to your entry file
+  },
 })
